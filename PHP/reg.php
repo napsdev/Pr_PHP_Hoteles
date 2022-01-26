@@ -4,7 +4,6 @@ if (!isset($_POST["name"]) || !isset($_POST["city"]) || !isset($_POST["ad"]) || 
     exit();
 }
 
-
 //Archivo de conexion DB
 include_once "Conexion.php";
 
@@ -17,11 +16,24 @@ $nh = $_POST["nh"];
 
 //Querys
 $Query = $con->prepare("INSERT INTO hoteles(nombre, ciudad, direccion, nit, n_habitaciones) VALUES (?, ?, ?, ?, ?);");
-$Res = $Query->execute([$name, $city, $ad, $nit, $nh]);
+try {
+    $Res = $Query->execute([$name, $city, $ad, $nit, $nh]);
+} catch (PDOException $e) {
+    echo "<script>
+    alert('Algo salio mal! Nombre de hotel repetido.');
+    window.location.href='../VIEW/Inicio.html';
+    </script>";
+}
 
 //Resultado de las querys
 if ($Res === true) {
-	header("Location: ../VIEW/inicio.html");
+	echo "<script>
+    alert('Registrado exitosamente');
+    window.location.href='../VIEW/Inicio.html';
+    </script>";
 } else {
-    echo "Algo salió mal. Por favor verifica que la tabla exista";
+    echo "<script>
+    alert('Algo salio mal! Vuelve a intentarlo.');
+    window.location.href='../VIEW/Inicio.html';
+    </script>";
 }
