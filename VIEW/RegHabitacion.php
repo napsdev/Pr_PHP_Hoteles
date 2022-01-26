@@ -32,7 +32,7 @@
                     </div>
 
                     <button type="submit" class="btn btn-primary">Registrar</button>
-                    <a href="Inicio.html" class="btn btn-success">Inicio</a>
+                    <a href="Inicio.php" class="btn btn-success">Inicio</a>
                 </form>
 
             </div>

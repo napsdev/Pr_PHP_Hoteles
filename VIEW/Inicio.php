@@ -20,9 +20,15 @@
                     <a href="RegHabitacion.php" class="btn btn-success">Registrar habitación</a>
                     </div>
 
+                    <?php include_once "../PHP/lista.php"; 
+                    //eliminar con onclik
+                    ?>
+
             </div>
         </div>
     </div>
+
+    
 
 
     <!--jQuery -->
