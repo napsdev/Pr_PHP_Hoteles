@@ -18,12 +18,15 @@
                     <div class="mt-4">
                     <a href="RegHotel.htm" class="btn btn-success">Registrar hotel</a>
                     <a href="RegHabitacion.php" class="btn btn-success">Registrar habitación</a>
-                    </div>
-
+                    
+                    <div class="my-3">
+                      <h3>Hoteles</h3>
                     <?php include_once "../PHP/lista.php"; 
                     //eliminar con onclik
                     ?>
+                    </div>
 
+                  </div>
             </div>
         </div>
     </div>
